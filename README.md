@@ -4,9 +4,11 @@
 Welcome to the Tour ET. App - a state-of-the-art tour and travel  interactive and comprehensive online system. Built with MERN full stack.
 
 # Some UI Preview
-**Home page**
+
 **Signin/signup page**
+<p align="center">
 <img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(611).png" height="auto" width="600"/>
+</p>
 
 **Home page**
 ###### Users can see recent package and most popular package lists and also search by location or name
