@@ -1,0 +1,50 @@
+.ethiopia{
+    margin-top: 100px;
+}
+.ethio-topic {
+    font-family: 'Roboto Slab', serif;
+}
+.ethio {
+    margin-top: 150px;
+    font-size: 5rem;
+}
+.eth-img {
+    width: 80%;
+    max-width: 900px;
+    height: auto;
+    margin-bottom: 100px;
+    object-fit: cover;
+}
+.para1 {
+    max-width: 900px;
+}
+.para2 {
+    max-width: 900px;
+}
+.img2 {
+    width: 300px;
+}
+.desc-container {
+    margin-top: 100px;
+}
+.land {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+}
+.things-topic {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+}
+.things-desc {
+    max-width: 900px;
+}
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin:  70px 0;
+}
+.images img {
+    width: 300px;
+}

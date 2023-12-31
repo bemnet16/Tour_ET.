@@ -1,0 +1,194 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.contact {
+  background: url("./assets/ethiopia.jpg");
+  background-size: cover;
+  /* background-attachment: fixed; */
+}
+
+.contact__form > * {
+  height: 50px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.con {
+  /* background-color:rgba(217, 217, 217, 0.75); */
+}
+.about-us {
+  margin-top: 100px;
+}
+.group ul li {
+  text-align: start;
+}
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital,wght@0,200;0,800;1,200;1,400&display=swap");
+
+* {
+  font-family: "Sofia Sans Semi Condensed", sans-serif;
+  /* font-size: 1em !important; */
+}
+
+.search {
+  background: url("https://i.ytimg.com/vi/RatnnQpA2FM/maxresdefault.jpg")
+    no-repeat 50% 25%;
+  max-width: 100%;
+  background-size: cover;
+  height: 90vh;
+  overflow-x: hidden;
+  border-right: none !important;
+}
+
+.search-bar {
+  width: 90%;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.searchicon {
+  width: 65px !important;
+  cursor: pointer;
+  border-left: none !important;
+}
+
+.small-conatiner {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  overflow: auto;
+}
+
+.small-conatiner .card {
+  margin: 13px;
+  width: 380px;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .search-bar {
+    width: 80% !important;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .search-bar {
+    width: 50% !important;
+  }
+}
+.footer {
+  background-color: rgb(151, 151, 137);
+  margin-top: 2rem;
+  padding: 1em;
+  border-top: 1.5px solid black;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  justify-content: center;
+}
+
+.site-map {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-map li {
+  list-style: none;
+}
+
+.copyright {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  justify-self: right;
+  margin-right: 4rem;
+  font-size: smaller;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+.header {
+  font-size: 1.2rem;
+  color: whitesmoke;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.header-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin-right: 1rem;
+}
+
+.header-menu > li:hover {
+  cursor: pointer;
+  color: aquamarine;
+}
+
+.login-container {
+  position: fixed;
+  margin-top: 100px;
+  top: -100px;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 234;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 150px;
+}
+.cart_logo {
+  font-size: 1.5rem;
+  color: white;
+}
+.cart_number {
+  color: white;
+}
+/* .login-container > *{
+    margin-top: 100px;
+} */
+/* .login-container{
+    position: absolute;
+    top:80%;
+    right: 10vw;
+    background-color: aquamarine;
+    border-radius: 50px ;
+    padding: 20px;
+
+}
+.login-container span{
+    cursor: pointer;
+    background-color: red;
+    padding: 10px;
+} */
