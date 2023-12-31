@@ -11,7 +11,9 @@ import useFetch from "../customHook/useFetch";
 
 function PackageDetail() {
   const { id } = useParams();
-  const { data: site } = useFetch(`https://dankil.onrender.com/api/package/${id}`)
+  const { data: site } = useFetch(
+    `https://tour-et.onrender.com/api/package/${id}`
+  );
   const [itemAdded, setItemAdded] = useState(false);
   const { state, dispatch } = useContext(CartContext);
   const { user } = useAuthContext();
@@ -22,8 +24,9 @@ function PackageDetail() {
     if (!user) {
       return;
     }
+
     const response = await fetch(
-      `https://dankil.onrender.com/api/wishlist
+      `https://tour-et.onrender.com/api/wishlist
       `,
       {
         method: "POST",
@@ -40,9 +43,8 @@ function PackageDetail() {
     }
   };
 
-
   const findId = () => {
-    const va = state.find((idx) => idx.packages == id);
+    const va = state.find((idx) => idx.packages === id);
     va ? setItemAdded(true) : setItemAdded(false);
   };
   useEffect(() => {
@@ -52,37 +54,36 @@ function PackageDetail() {
   if (!site) {
     return;
   }
-  console.log(site)
   const stars = Array(Math.round(site?.rating)).fill(0);
   const description = site?.description[0];
 
   return (
     <section className="bg-light">
-      <div class="container-md">
-        <div class=" row m-0 mt-2">
+      <div className="container-md">
+        <div className=" row m-0 mt-2">
           <div
             id="carouselExampleControls"
-            class="col-12 col-md-6 carousel slide"
+            className="col-12 col-md-6 carousel slide"
             data-bs-ride="carousel"
           >
-            <div class="carousel-inner">
+            <div className="carousel-inner">
               {site.image.map((im, index) => {
-                if (index == 0) {
+                if (index === 0) {
                   return (
-                    <div class="image carousel-item active">
+                    <div className="image carousel-item active" key={index}>
                       <img
                         src={im}
-                        alt="Package Image"
+                        alt="Package img"
                         className="d-block img-fluid w-100"
                       />
                     </div>
                   );
                 } else {
                   return (
-                    <div class="image carousel-item ">
+                    <div className="image carousel-item" key={index}>
                       <img
                         src={im}
-                        alt="Package Image"
+                        alt="Package img"
                         className="d-block img-fluid w-100"
                       />
                     </div>
@@ -92,28 +93,28 @@ function PackageDetail() {
             </div>
 
             <button
-              class="carousel-control-prev"
+              className="carousel-control-prev"
               type="button"
               data-bs-target="#carouselExampleControls"
               data-bs-slide="prev"
             >
               <span
-                class="carousel-control-prev-icon"
+                className="carousel-control-prev-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Previous</span>
+              <span className="visually-hidden">Previous</span>
             </button>
             <button
-              class="carousel-control-next"
+              className="carousel-control-next"
               type="button"
               data-bs-target="#carouselExampleControls"
               data-bs-slide="next"
             >
               <span
-                class="carousel-control-next-icon"
+                className="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Next</span>
+              <span className="visually-hidden">Next</span>
             </button>
           </div>
 
@@ -124,43 +125,45 @@ function PackageDetail() {
             <div className="text-start">
               {stars.map((_, index) => {
                 return <FaStar key={index} />;
-              })}{" "}
+              })}
             </div>
-            <h4 className="lead fs-4 rounded-pill py-4 text-start">
-              {site.pricePerAdult}.00 Birr Per adult
-            </h4>
-            <div className="d-flex justify-content-start gap-2">
-              {!itemAdded && (
-                <button
-                  className="btn btn-primary btn-md"
-                  onClick={() => {
-                    addToCart({
-                      packages: site._id,
-                      name: site.name,
-                      price: site.pricePerAdult,
-                      photo: site.image[0],
-                    });
-                  }}
-                >
-                  <AiOutlineShoppingCart /> Add to Cart
+            <div className="d-flex justify-content-between align-items-center">
+              <h4 className="lead fs-4 rounded-pill py-4 text-start">
+                {site.pricePerAdult}.00 Birr Per adult
+              </h4>
+              <div
+                style={{ height: "50px" }}
+                className="d-flex justify-content-end gap-2"
+              >
+                {!itemAdded && (
+                  <button
+                    className="btn btn-primary btn-md"
+                    onClick={() => {
+                      addToCart({
+                        user: user.detail._id,
+                        packages: site._id,
+                        name: site.name,
+                        price: site.pricePerAdult,
+                        photo: site.image[0],
+                      });
+                    }}
+                  >
+                    <AiOutlineShoppingCart /> Add to Cart
+                  </button>
+                )}
+                {itemAdded && (
+                  <button className="btn btn-primary btn-md">Added</button>
+                )}
+                <button className="btn btn-info btn-lg ">
+                  <Link
+                    className="text-decoration-none text-light"
+                    to={`/book/${site._id}`}
+                  >
+                    <BsCheck2Square /> Book
+                  </Link>
                 </button>
-              )}
-              {itemAdded && (
-                <button className="btn btn-primary btn-md">Added</button>
-              )}
-              <button className="btn btn-info btn-lg ">
-                <Link
-                  className="text-decoration-none text-light"
-                  to={`/book/${site._id}`}
-                >
-                  <BsCheck2Square /> Book
-                </Link>
-              </button>
+              </div>
             </div>
-            <p className="text-start fs-5 py-2">
-              Type of activity{" "}
-              <span className="text-muted"> {site.to_do_type}</span>{" "}
-            </p>
           </div>
         </div>
 
@@ -169,6 +172,7 @@ function PackageDetail() {
           <div className="map col-12 col-md-6 d-flex align-self-start mx-auto">
             <iframe
               src={site.map}
+              title="site"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -178,13 +182,17 @@ function PackageDetail() {
           </div>
 
           <div
-            class="col-12 col-md-6 accordion accordion-flush text-start align-self-start mt-4"
+            className="col-12 col-md-6 accordion accordion-flush text-start align-self-start mt-4"
             id="accordionFlushExample"
           >
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingOne">
+            <h2 className="text-start fs-5 py-2">
+              Type of activity{" "}
+              <span className="text-muted"> {site.to_do_type}</span>{" "}
+            </h2>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="flush-headingOne">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseOne"
@@ -196,25 +204,25 @@ function PackageDetail() {
               </h2>
               <div
                 id="flush-collapseOne"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="flush-headingOne"
                 data-bs-parent="#accordionFlushExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   {description.included.map((info, index) => {
                     return (
                       <p key={index}>
-                        <GiSupersonicBullet /> {info}{" "}
+                        <GiSupersonicBullet /> {info}
                       </p>
                     );
                   })}{" "}
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingTwo">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="flush-headingTwo">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseTwo"
@@ -226,11 +234,11 @@ function PackageDetail() {
               </h2>
               <div
                 id="flush-collapseTwo"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="flush-headingTwo"
                 data-bs-parent="#accordionFlushExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   {description.notIncluded.map((info, index) => {
                     return (
                       <p key={index}>
@@ -241,10 +249,10 @@ function PackageDetail() {
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="flush-headingThree">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseThree"
@@ -256,28 +264,28 @@ function PackageDetail() {
               </h2>
               <div
                 id="flush-collapseThree"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="flush-headingThree"
                 data-bs-parent="#accordionFlushExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   {description.expect.map((ex) => {
                     return (
                       <>
-                        {ex.map((e) => {
-                          return <p>{e} </p>;
-                        })}{" "}
-                        <hr />{" "}
+                        {ex.map((e, idx) => {
+                          return <p key={idx}>{e} </p>;
+                        })}
+                        <hr />
                       </>
                     );
                   })}{" "}
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingFour">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="flush-headingFour">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseFour"
@@ -289,11 +297,11 @@ function PackageDetail() {
               </h2>
               <div
                 id="flush-collapseFour"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="flush-headingFour"
                 data-bs-parent="#accordionFlushExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   {description.additionalInfo.map((info, index) => {
                     return (
                       <p key={index}>
@@ -304,10 +312,10 @@ function PackageDetail() {
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingFive">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="flush-headingFive">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseFive"
@@ -319,24 +327,25 @@ function PackageDetail() {
               </h2>
               <div
                 id="flush-collapseFive"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="flush-headingFive"
                 data-bs-parent="#accordionFlushExample"
               >
-                <div class="accordion-body">{description.policy[0]} </div>
+                <div className="accordion-body">{description.policy[0]} </div>
               </div>
             </div>
           </div>
         </div>
         {user && (
-          <div className="what">
-            <Link
-              to={`/review/${site._id}`}
-              className="btn btn-outline-secondary "
-            >
-              {" "}
-              Write a review
-            </Link>
+          <div className="what pt-5  ">
+            <div className="text-center w-50">
+              <Link
+                to={`/review/${site._id}`}
+                className="btn btn-outline-secondary "
+              >
+                Write a review
+              </Link>
+            </div>
             <Review unique={site._id} />
           </div>
         )}

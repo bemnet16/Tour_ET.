@@ -12,16 +12,21 @@ const useFetch = (url, dep = null) => {
           Authorization: `Bearer ${user?.token}`,
         },
       });
+
       const { data } = await response.json();
+
       if (response.ok) {
         setLoading(false);
         setData(data);
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log("use fetch error");
+    }
   };
   useEffect(() => {
     fetchData();
   }, [dep]);
+
   return { data, loading };
 };
 export default useFetch;

@@ -1,5 +1,3 @@
-import { useState, useReducer, useEffect } from "react";
-import { IconContext } from "react-icons/lib";
 import "./App.css";
 
 import Login from "./Component/account/login";
@@ -17,6 +15,7 @@ import ReviewsPage from "./pages/ReviewsPage";
 import NotFound from "./Component/static/Not Found";
 import Footer from "./Component/static/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Ethiopia from "./pages/Ethiopia/Ethiopia";
 
 function App() {
   return (
@@ -48,6 +47,9 @@ function App() {
                 </Route>
                 <Route exact path="/cart">
                   <Cart />
+                </Route>
+                <Route exact path="/Ethiopia">
+                  <Ethiopia />
                 </Route>
                 <Route exact path="/contact">
                   <Contact />

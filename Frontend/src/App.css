@@ -65,7 +65,8 @@
 }
 
 .search {
-  background: url("./assets/banner.jpg") no-repeat 50% 25%;
+  background: url("https://i.ytimg.com/vi/RatnnQpA2FM/maxresdefault.jpg")
+    no-repeat 50% 25%;
   max-width: 100%;
   background-size: cover;
   height: 90vh;

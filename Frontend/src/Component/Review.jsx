@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaSearch, FaStar, FiMapPin } from "react-icons/fa";
 import { BiLike, BiDislike } from "react-icons/bi";
-import { useAuthContext } from "../customHook/useAuthContext.js"
+import { useAuthContext } from "../customHook/useAuthContext.js";
 import {
   AiOutlineDislike,
   AiOutlineLike,
@@ -15,7 +15,7 @@ function Review({ unique }) {
 
   const fetchReview = async () => {
     const response = await fetch(
-      `https://dankil.onrender.com/api/package/${unique}/comment`
+      `https://tour-et.onrender.com/api/package/${unique}/comment`
     );
     const result = await response.json();
 
@@ -28,47 +28,51 @@ function Review({ unique }) {
   }, []);
 
   if (reviews.length === 0) {
-    return <h3>No review for today</h3>;
+    return <h3 className="py-3">No review for this package. Be the first</h3>;
   }
 
   return (
     <div className="review py-5 container">
-      <div className="row  ">
-
-        {reviews.map((review) => {
-          return <div className="col-md-6">
-            <EachReview key={review._id} {...review} />;
-          </div>
+      <div
+        className="col-md-6 scrollable-div"
+        style={{ maxHeight: "400px", overflowY: "auto" }}
+      >
+        {reviews.map((review, idx) => {
+          return (
+            <div key={idx}>
+              <EachReview key={review._id} {...review} />
+            </div>
+          );
         })}
-
       </div>
     </div>
   );
 }
 
 const EachReview = ({ _id, user, text, like, dislike, rating }) => {
-  const { user: realUser, dispatch } = useAuthContext()
-  console.log(realUser)
+  const { user: realUser } = useAuthContext();
 
   const [liked, setLike] = useState(realUser.detail.likedComment.includes(_id));
-  const [disliked, setDislike] = useState(realUser.detail.dislikedComment.includes(_id));
+  const [disliked, setDislike] = useState(
+    realUser.detail.dislikedComment.includes(_id)
+  );
   const [likeNO, setLiked] = useState(like);
   const [dislikeNO, setDisliked] = useState(dislike);
-  // console.log(realUser.detail.likedComment)
+
   const handelLike = async (e) => {
-    let like = likeNO
-    let dislike = dislikeNO
+    let like = likeNO;
+    let dislike = dislikeNO;
     setLike(!liked);
     if (liked) {
       setLiked(likeNO - 1);
-      like = -1
+      like = -1;
     } else {
       if (disliked) {
         setDisliked(dislikeNO - 1);
-        dislike -= 1
+        dislike -= 1;
       }
       setLiked(likeNO + 1);
-      like++
+      like++;
     }
     setDislike(false);
     await fetch(`http://localhost:5000/api/comment/${_id}`, {
@@ -79,27 +83,25 @@ const EachReview = ({ _id, user, text, like, dislike, rating }) => {
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        Authorization: `Bearer ${realUser.token}`
+        Authorization: `Bearer ${realUser.token}`,
       },
     });
-
-
   };
   const handelDislike = async (e) => {
-    let like = likeNO
-    let dislike = dislikeNO
+    let like = likeNO;
+    let dislike = dislikeNO;
     setLike(false);
     setDislike(!disliked);
     if (dislikeNO) {
       setDisliked(dislikeNO - 1);
-      dislike -= 1
+      dislike -= 1;
     } else {
       if (liked) {
         setLiked(likeNO - 1);
-        like -= 1
+        like -= 1;
       }
       setDisliked(dislikeNO + 1);
-      dislike++
+      dislike++;
     }
     await fetch(`http://localhost:5000/api/comment/${_id}`, {
       method: "PATCH",
@@ -109,12 +111,11 @@ const EachReview = ({ _id, user, text, like, dislike, rating }) => {
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        Authorization: `Bearer ${realUser.token}`
+        Authorization: `Bearer ${realUser.token}`,
       },
     });
-
   };
-  const star = Array(parseInt(rating)).fill(0)
+  // const star = Array(parseInt(rating)).fill(0);
 
   return (
     <>
@@ -137,11 +138,11 @@ const EachReview = ({ _id, user, text, like, dislike, rating }) => {
             </div>
           </div>
 
-          <div className="star text-start ms-5">{
-            star.map(s => {
-              return <FaStar />
-            })
-          }</div>
+          {/* <div className="star text-start ms-5">
+            {star.map((s) => {
+              return <FaStar />;
+            })}
+          </div> */}
         </div>
         <div className="body text-start px-5 py-3">
           <p>{text} </p>
