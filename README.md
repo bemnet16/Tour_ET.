@@ -4,7 +4,7 @@
 Welcome to the Tour ET. App - a state-of-the-art tour and travel  interactive and comprehensive online system. Built with MERN full stack.
 
 # Some UI Preview
-
+**Home page**
 **Signin/signup page**
 <img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(611).png" height="auto" width="600"/>
 
