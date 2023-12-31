@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 dotenv.config();
 
-// all routers
 import packageRouter from "./routes/packageRouter.js";
 import hotelRouter from "./routes/hotelRouter.js";
 import userRouter from "./routes/userRouter.js";
@@ -15,7 +14,6 @@ import wishlistRouter from "./routes/wishlistRouter.js";
 
 const app = express();
 
-// parse all data in json format
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -28,11 +26,9 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Methods",
     "GET, POST, PATCH, DELETE, OPTIONS"
   );
-  // res.setHeader("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-// use routers
 app.use("/api/package", packageRouter);
 app.use("/api/comment", commentRouter);
 app.use("/api/user", userRouter);
@@ -41,11 +37,8 @@ app.use("/api/hotel", hotelRouter);
 app.use("/api/room", roomRouter);
 app.use("/api/booking", bookingRouter);
 
-// username : touretdb
-// passowrd: admin
 
 mongoose.set("strictQuery", false);
-
 async function connectToDb() {
   try {
     await mongoose.connect(process.env.MONGODBURL, {
@@ -66,9 +59,7 @@ async function startServer() {
         origin: "http://localhost:3000",
       })
     );
-    app.listen(process.env.PORT, (error) => {
-      console.log(error);
-    });
+    app.listen(process.env.PORT, (error) => {});
     console.log(`Listening through port ${process.env.PORT}`);
   } catch (error) {
     console.log(error.message);

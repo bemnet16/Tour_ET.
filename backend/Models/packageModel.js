@@ -13,6 +13,7 @@ const packageSchema = new mongoose.Schema(
     },
     duration: {
       type: String,
+      required: true,
     },
     pricePerAdult: {
       type: Number,
@@ -49,10 +50,11 @@ const packageSchema = new mongoose.Schema(
     type: {
       type: String,
       required: true,
-      //   enum: ["City", "Group", "Park", "Adventure"], // different types of packages.
+      enum: ["HistoricalPlace", "City", "Group", "Park", "Adventure"], // different types of packages.
     },
     to_do_type: {
       type: String,
+      required: true,
     },
     map: {
       type: String,

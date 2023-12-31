@@ -1,32 +1,28 @@
+import mongoose from "mongoose";
 
-
-import mongoose from 'mongoose';
-
-
-const wishlistSchema = new mongoose.Schema({
+const wishlistSchema = new mongoose.Schema(
+  {
     user: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
     },
     packages: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
     },
-    name:{
-        type: String,
+    name: {
+      type: String,
     },
     photo: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     price: {
-        type: Number,
-        required: true
-    }
+      type: Number,
+      required: true,
+    },
+  },
+  { timestamp: true }
+);
 
-
-},
-    { timestamp: true });
-
-
-export default mongoose.model('Wishlist', wishlistSchema);
+export default mongoose.model("Wishlist", wishlistSchema);

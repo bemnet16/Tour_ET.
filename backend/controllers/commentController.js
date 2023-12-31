@@ -20,9 +20,9 @@ export const addComment = async (req, res) => {
     } else if (authorized === "C") {
       return res.status(401).json({ msg: "not authorized" });
     }
-    const { pkg, text, rating } = req.body;
+    const { pkg, text } = req.body;
 
-    const newcomment = { user: authorized.name, pkg, text, rating };
+    const newcomment = { user: authorized.name, pkg, text };
 
     const comment = await Comment.create(newcomment);
     return res.status(201).json({ data: comment });
