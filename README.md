@@ -1,5 +1,7 @@
-# Tour ET.
-  #### (MERN-Stack)
+# Tour ET.: Explore Ethiopia
+
+Tour ET is an innovative web application designed to transform travel experiences in Ethiopia. Leveraging the MERN stack and Bootstrap, this platform offers an intuitive and comprehensive approach to discovering Ethiopia, from city escapades to historical adventures.
+
 # Introduction
 Welcome to the Tour ET. App - a state-of-the-art tour and travel  interactive and comprehensive online system. Built with MERN full stack.
 
@@ -64,90 +66,48 @@ Welcome to the Tour ET. App - a state-of-the-art tour and travel  interactive an
 </p>
 
 
-# Key Features
-Dynamic Course Creation & Management: Easily create and manage course content, including images and attachments.
-Robust Authentication: Secure user authentication using Clerk.
-Interactive Video Playback & Upload: Integrated with Mux for a smooth video experience.
-Secure Payments: Stripe integration for handling course payments and subscriptions.
-User-Friendly Interface: Modern, responsive design with Tailwind CSS.
-Document and Image Uploads: Utilizing UploadThing for hassle-free file management.
-
-# Technologies Used
-
-## Frontend
-
-**Technologies Used:**
-
-- React *18.2.0*
-- Next.js *13.4.12*
-- Tailwind CSS *3.3.5*
-- React Hook Form *7.48.2*
-- React-Quill *2.0.0*
-- Recharts *2.10.3*
-- Lucide-React *0.294.0*
-
-**Key Libraries:**
-
-- **@clerk/nextjs** *4.27.2*: For secure user authentication.
-- **@mux/mux-node** and **@mux/mux-player-react** *7.3.3* & *2.3.0*: For video playback and uploads.
-- **@uploadthing/react** *6.0.2*: For handling document and image uploads.
-- **react-hot-toast** *2.4.1*: For elegant notifications.
-- **zustand** *4.4.7*: State management.
-
-**UI/UX Enhancements:**
-
-- **Tailwind Merge** *2.0.0*: For optimizing Tailwind CSS classes.
-- **cmdk** *0.2.0*: Command menu interface.
-- **react-dropzone** *14.2.3*: Drag and drop file uploads.
-- **@tanstack/react-table** *8.10.7*: For building and managing tables.
-- **@radix-ui/react-dialog**, **@radix-ui/react-dropdown-menu**, etc., for advanced UI components.
-
-**Features:**
-
-- Interactive and user-friendly interface.
-- Seamless integration with video streaming and file upload services.
-- Comprehensive course creation and management tools.
-- Responsive design ensuring compatibility across various devices.
-
-**Development Tools:**
-
-- **eslint** *8.54.0*: For code linting.
-- **postcss** *8.4.31* and **autoprefixer** *10.4.16*: For CSS processing.
-- **typescript** *5.3.2*: For type-checking.
 
 
-## Backend
+## Key Features
 
-**Main Technologies:**
+- **Diverse Travel Packages**: Explore a variety of packages including city tours, group travels, adventure experiences, and historical journeys.
+- **Interactive Google Maps Integration**: Navigate through different locales with integrated Google Maps, enhancing the exploration of cities and historical sites.
+- **User Reviews**: Engage with community feedback through user reviews, helping travelers make informed decisions.
+- **Responsive and Intuitive Design**: Crafted with Bootstrap for a user-friendly experience across all devices.
 
-- Express.js *4.18.2*: The backbone of the server, handling routing and middleware.
-- Mongoose *8.0.2*: ODM for MongoDB, simplifying database interactions.
-- Node.js: The runtime environment for executing JavaScript on the server side.
+## Technologies Used
 
-**Database:**
+### Frontend
 
-- MongoDB: NoSQL database used for storing application data.
+**Core Technologies:**
+- React: A JavaScript library for building user interfaces.
+- Bootstrap: For responsive design and UI components.
 
-**Key Libraries and Middleware:**
+**Maps and Navigation:**
+- Google Maps API: For interactive mapping and geographical features.
 
-- **dotenv** *16.3.1*: For managing environment variables.
-- **nodemon** *3.0.2* (Development): For automatically restarting the server during development.
+### Backend
 
-**Features:**
+**Main Technologies (MERN Stack):**
+- MongoDB: NoSQL database for storing application data.
+- Express.js: Web application framework for Node.js.
+- React: Frontend JavaScript library.
+- Node.js: JavaScript runtime for executing server-side JavaScript.
 
-- Robust REST API endpoints for data retrieval and manipulation.
-- Secure connection to the database with efficient query handling.
-- Scalable architecture suitable for expanding features and user base.
+### Security and Authentication
+- JWT (JSON Web Tokens) for secure authentication.
+- bcrypt.js for password hashing and security measures.
 
-**Security and Authentication:**
+### API Integrations
+- Google Maps API for detailed mapping and route planning.
 
-- Integrated security measures for API endpoints.
-- Authentication and authorization logic to protect user data.
+## Getting Started
 
-**Development Tools:**
+### Prerequisites
 
-- Various NPM packages for enhancing functionality and efficiency.
-- Postman for testing and validating API endpoints.
+- npm
+  ```sh
+  npm install npm@latest -g
 
 **Integrations:**
 
