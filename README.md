@@ -1,4 +1,4 @@
-# Tour ET.: Explore Ethiopia
+# Tour ET. : Explore Ethiopia
 
 Tour ET is an innovative web application designed to transform travel experiences in Ethiopia. Leveraging the MERN stack and Bootstrap, this platform offers an intuitive and comprehensive approach to discovering Ethiopia, from city escapades to historical adventures.
 
@@ -98,9 +98,6 @@ Welcome to the Tour ET. App - a state-of-the-art tour and travel  interactive an
 - JWT (JSON Web Tokens) for secure authentication.
 - bcrypt.js for password hashing and security measures.
 
-### API Integrations
-- Google Maps API for detailed mapping and route planning.
-
 ## Getting Started
 
 ### Prerequisites
@@ -111,7 +108,6 @@ Welcome to the Tour ET. App - a state-of-the-art tour and travel  interactive an
 
 **Integrations:**
 
-- **Stripe** for payment processing: Integrated with Stripe's webhooks for handling transactions.
 - Other third-party services as required by the application.
 
 
