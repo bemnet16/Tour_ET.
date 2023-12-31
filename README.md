@@ -5,7 +5,7 @@ Welcome to the Tour ET. App - a state-of-the-art tour and travel  interactive an
 
 # Some UI Preview
 
-**Sign-up/sign-in page**
+**Sign-up&ign-in page**
 <img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(611).png" height="auto" width="600"/>
 
 **Home page**
