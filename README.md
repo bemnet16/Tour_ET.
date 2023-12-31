@@ -9,63 +9,56 @@ Welcome to the Tour ET. App - a state-of-the-art tour and travel  interactive an
 <img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(611).png" height="auto" width="600"/>
 
 **Home page**
-###### Users can see recent package and most popular package lists
+###### Users can see recent package and most popular package lists and also search by location or name
 <p align="center">
-<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(595).png" alt="Course Page" height="auto" width="600" />
-<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(596).png" alt="Course Page" height="auto" width="600" />
-<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(597).png" alt="Course Page" height="auto" width="600" />
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(595).png" alt="Course Page" height="auto" width="400" />
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(596).png" alt="Course Page" height="auto" width="400" />
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(597).png" alt="Course Page" height="auto" width="400" />
 </p>
 
-**Courses/:courseId page**
-###### Teacher/Admin to create, edit, delete, and see full detail course
+**Package page**
+###### Users can see packages and also can filter using different parametes
 <p align="center">
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(289).png" alt="Course Page" height="auto" width="500" />
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(290).png" alt="Course Page" height="auto" width="500" />
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(598).png" alt="Course Page" height="auto" width="500" />
 </p>
 
-**Chapter page**
-###### Teacher/Admin to (create, edit, delete, and see full detail) chapter for a course
+**Package detail page**
+###### Users can see package's description, reviews, location, can add to cart, book the package, 
 <p align="center">
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(293).png" alt="Course Page" height="auto" width="500"/>
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(294).png" alt="Course Page" height="auto" width="500" />
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(599).png" alt="Course Page" height="auto" width="500" />
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(602).png" alt="Course Page" height="auto" width="500" />
 </p>
 
-**Analytics page**
-###### Teacher/Admin to analyze how much course are sold and how much revenue gained
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(291).png" alt="Course Page" height="auto" width="600" />
+**Review page**
+###### Authenticated user can give review/comment, rate the package, like/dislike other's review
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(601).png" alt="Course Page" height="auto" width="500" />
 
-**Chapter page**
-###### Customers can enroll for a course, see free chapters
+
+**Book page**
+###### Customers check out payment, choose hotel, and room
 <p align="center">
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(297).png" alt="Course Page" height="auto" width="500" />
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(298).png" alt="Course Page" height="auto" width="500" />
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(603).png" alt="Course Page" height="auto" width="500" />
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(604).png" alt="Course Page" height="auto" width="500" />
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(605).png" alt="Course Page" height="auto" width="500" />
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(606).png" alt="Course Page" height="auto" width="500" />
 </p>
 
-**Stripe for payment process**
-###### Customers check out payment proccess
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(299).png" alt="Course Page" height="auto" width="600" />
-
-**Chapter page**
-###### Customers can see course attachments, their progress after purchased the course
+**Witshlist page**
+###### Customers can see packages stored in wishlist, remove from here, book here
 <p align="center">
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(295).png" alt="Course Page" height="auto" width="500" />
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(296).png" alt="Course Page" height="auto" width="500" />
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(607).png" alt="Course Page" height="auto" width="500" />
 </p>
 
-**Dashboard page**
-###### Customers can see their progress courses, completed courses
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(301).png" alt="Course Page" height="auto" width="600" />
+**Contact page**
+###### Customers can reach us 
+<img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(608).png" alt="Course Page" height="auto" width="500" />
 
 
-**Sidebar menu/alerts**
-###### responsive and user friendly interfaces
+**About page**
+###### users can know about us
 <p align="center">
-  <img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(300).png" alt="Course Page" height="auto" width="600" />
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(302).png" alt="Course Page" height="auto" width="350" />
-</p>
-<p align="center">
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(303).png" alt="Course Page" height="auto" width="400" />
-<img src="https://github.com/bemnet16/Learning-management-system/blob/UI-Preview/screenshots/Screenshot%20(304).png" alt="Course Page" height="auto" width="400" />
+  <img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(609).png" alt="Course Page" height="auto" width="500" />
+  <img src="https://github.com/bemnet16/Tour_ET--MERN--/blob/UI-Preview/screenshots/Screenshot%20(610).png" alt="Course Page" height="auto" width="500" />
 </p>
 
 
